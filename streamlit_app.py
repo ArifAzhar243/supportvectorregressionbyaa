@@ -30,7 +30,7 @@ st.pyplot(fig)
 # Step 3: Preprocess Data
 st.subheader("Data Preprocessing")
 
-required_cols = ['friction_angle', 'cohesion', 'slope_angle', 'rainfall_intensity', 'rainfall_duration', 'FOS']
+required_cols = ['FOS','friction_angle', 'cohesion', 'slope_angle', 'rainfall_intensity', 'rainfall_duration']
 missing_cols = [col for col in required_cols if col not in df.columns]
 if missing_cols:
     st.error(f"Dataset must contain these columns: {required_cols}. Missing: {missing_cols}")
