@@ -30,13 +30,13 @@ st.pyplot(fig)
 # Step 3: Preprocess Data
 st.subheader("Data Preprocessing")
 
-required_cols = ['FOS','friction_angle', 'cohesion', 'slope_angle', 'rainfall_intensity', 'rainfall_duration']
+required_cols = ['FOS','Friction_Angle', 'Cohesion', 'Slope_Angle', 'Rainfall_Intensity', 'Rainfall_Duration']
 missing_cols = [col for col in required_cols if col not in df.columns]
 if missing_cols:
     st.error(f"Dataset must contain these columns: {required_cols}. Missing: {missing_cols}")
     st.stop()
 
-X = df[['friction_angle', 'cohesion', 'slope_angle', 'rainfall_intensity', 'rainfall_duration']]
+X = df[['Friction_Angle', 'Cohesion', 'Slope_Angle', 'Rainfall_Intensity', 'Rainfall_Duration']]
 y = df['FOS']
 
 # Normalize features
