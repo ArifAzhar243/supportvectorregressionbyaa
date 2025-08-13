@@ -66,7 +66,6 @@ with st.spinner("Training SVR model..."):
     grid_search.fit(X_train, y_train)
 
 best_svr = grid_search.best_estimator_
-st.success(f"Best Parameters: {grid_search.best_params_}")
 
 # Step 5: Model Evaluation
 y_pred = best_svr.predict(X_test)
