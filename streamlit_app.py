@@ -93,16 +93,16 @@ st.pyplot(fig1)
 # Step 7: User Input Prediction
 st.subheader("🔮 Predict Factor of Safety from New Parameters")
 
-friction_angle = st.number_input("Friction Angle (°)", min_value=0, max_value=90, value=30, step=1, format="%d")
-cohesion = st.number_input("Cohesion (kPa)", min_value=0, value=20, step=1, format="%d")
-slope_angle = st.number_input("Slope Angle (°)", min_value=0, max_value=90, value=25, step=1, format="%d")
-rainfall_intensity = st.number_input("Rainfall Intensity (mm/hr)", min_value=0, value=50, step=1, format="%d")
-rainfall_duration = st.number_input("Rainfall Duration (hours)", min_value=0, value=5, step=1, format="%d")
+Friction_Angle = st.number_input("Friction Angle (°)", min_value=0, max_value=90, value=30, step=1, format="%d")
+Cohesion = st.number_input("Cohesion (kPa)", min_value=0, value=20, step=1, format="%d")
+Slope_Angle = st.number_input("Slope Angle (°)", min_value=0, max_value=90, value=25, step=1, format="%d")
+Rainfall_Intensity = st.number_input("Rainfall Intensity (mm/hr)", min_value=0, value=50, step=1, format="%d")
+Rainfall_Duration = st.number_input("Rainfall Duration (hours)", min_value=0, value=5, step=1, format="%d")
 
 if st.button("Predict FOS"):
     try:
-        input_data = pd.DataFrame([[friction_angle, cohesion, slope_angle, rainfall_intensity, rainfall_duration]],
-                                  columns=['friction_angle', 'cohesion', 'slope_angle', 'rainfall_intensity', 'rainfall_duration'])
+        input_data = pd.DataFrame([[Friction_Angle, Cohesion, Slope_Angle, Rainfall_Intensity, Rainfall_Duration]],
+                                  columns=['Friction_Angle', 'Cohesion', 'Slope_Angle', 'Rainfall_Intensity', 'Rainfall_Duration'])
         input_scaled = scaler.transform(input_data)
         prediction = best_svr.predict(input_scaled)
         st.success(f"Predicted Factor of Safety: {prediction[0]:.4f}")
