@@ -17,7 +17,7 @@ st.info("This app builds and trains an SVR model to predict Factor of Safety fro
 # Step 1: Load Data
 with st.expander('Data'):
     st.write('*Raw Data*')
-    df = pd.read_csv('https://raw.githubusercontent.com/ArifAzhar243/dp-aamachinelearning/refs/heads/master/aa%20Machine%20Learning.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/ArifAzhar243/supportvectorregressionbyaa/refs/heads/master/aa%20Machine%20Learning.csv')
     st.dataframe(df)
 
 # Step 2: Correlation Heatmap
